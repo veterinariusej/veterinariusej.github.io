@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Target, Microscope, Stethoscope, Award, Users, BookCheck } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { GlowCard } from "@/components/ui/glow-card";
 
 export const Differentials = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -82,16 +83,16 @@ export const Differentials = () => {
             {differentials.map((item, index) => {
               const Icon = item.icon;
               return (
-                <Card 
+                <GlowCard 
                   key={index}
-                  className="p-6 hover:shadow-large transition-all duration-300 hover-lift hover-glow hover-shine group"
+                  className="p-6 shadow-large bg-card rounded-lg border group"
                 >
                   <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${getGradientClass(item.color)} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                     <Icon className={`w-8 h-8 ${getIconColor(item.color)}`} />
                   </div>
                   <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                   <p className="text-muted-foreground">{item.description}</p>
-                </Card>
+                </GlowCard>
               );
             })}
           </div>

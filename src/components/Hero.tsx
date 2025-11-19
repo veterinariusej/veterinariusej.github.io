@@ -5,6 +5,7 @@ import heroImage from "@/assets/hero-vet-surgery.jpg";
 import logoUFV from "@/assets/logo-ufv.png";
 import logoVeterinarius from "@/assets/logo-veterinarius.png";
 import { useParallax } from "@/hooks/use-parallax";
+import { GlowCard } from "@/components/ui/glow-card";
 
 export const Hero = () => {
   const parallaxOffset = useParallax(0.5);
@@ -70,16 +71,16 @@ export const Hero = () => {
 
           {/* Course Info Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto mt-8">
-            <div className="bg-background/90 backdrop-blur-sm rounded-lg p-6 shadow-large hover-lift hover-glow hover-shine">
+            <GlowCard className="bg-background/90 backdrop-blur-sm rounded-lg p-6 shadow-large">
               <Calendar className="w-8 h-8 text-primary mx-auto mb-2" />
               <p className="font-semibold text-foreground">Quando</p>
               <p className="text-muted-foreground">28 e 29 de março de 2026</p>
-            </div>
-            <div className="bg-background/90 backdrop-blur-sm rounded-lg p-6 shadow-large hover-lift hover-glow hover-shine">
+            </GlowCard>
+            <GlowCard className="bg-background/90 backdrop-blur-sm rounded-lg p-6 shadow-large">
               <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
               <p className="font-semibold text-foreground">Onde</p>
               <p className="text-muted-foreground">Universidade Federal de Viçosa</p>
-            </div>
+            </GlowCard>
           </div>
 
           {/* CTAs */}

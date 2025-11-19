@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, FlaskConical, Heart, Calendar } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { GlowCard } from "@/components/ui/glow-card";
 
 export const Program = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -79,9 +80,9 @@ export const Program = () => {
             {schedule.map((item, index) => {
               const Icon = item.icon;
               return (
-                <Card 
+                <GlowCard 
                   key={index} 
-                  className="p-6 md:p-8 hover:shadow-large transition-all duration-300 hover-lift hover-glow hover-shine"
+                  className="p-6 md:p-8 shadow-large bg-card rounded-lg border"
                 >
                   <div className="flex flex-col md:flex-row gap-6">
                     {/* Icon & Date */}
@@ -118,7 +119,7 @@ export const Program = () => {
                       </ul>
                     </div>
                   </div>
-                </Card>
+                </GlowCard>
               );
             })}
           </div>

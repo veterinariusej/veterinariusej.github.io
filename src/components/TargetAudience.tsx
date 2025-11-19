@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { GlowCard } from "@/components/ui/glow-card";
 
 export const TargetAudience = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -25,7 +26,7 @@ export const TargetAudience = () => {
             Desenvolvido para veterinários que buscam excelência no cuidado anestésico
           </p>
 
-          <Card className="p-8 shadow-large hover-lift hover-glow">
+          <GlowCard className="p-8 shadow-large bg-card rounded-lg border">
             <div className="space-y-6">
               {points.map((point, index) => (
                 <div key={index} className="flex gap-4 items-start group hover:translate-x-2 transition-all duration-300 hover-shine">
@@ -38,7 +39,7 @@ export const TargetAudience = () => {
                 </div>
               ))}
             </div>
-          </Card>
+          </GlowCard>
         </div>
       </div>
     </section>
