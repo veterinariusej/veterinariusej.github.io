@@ -33,11 +33,11 @@ export const Hero = () => {
 
           {/* Badges */}
           <div className="flex flex-wrap justify-center gap-3 mb-6">
-            <Badge variant="secondary" className="px-4 py-2 text-sm bg-background/90 backdrop-blur-sm">
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-medical-secondary text-white hover:bg-white hover:text-medical-secondary transition-all duration-300 backdrop-blur-sm border-2 border-medical-secondary">
               <Award className="w-4 h-4 mr-2" />
               Certificado UFV (RAEX)
             </Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm bg-background/90 backdrop-blur-sm">
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-medical-secondary text-white hover:bg-white hover:text-medical-secondary transition-all duration-300 backdrop-blur-sm border-2 border-medical-secondary">
               <Users className="w-4 h-4 mr-2" />
               Vagas Limitadas
             </Badge>
