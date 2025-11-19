@@ -3,15 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CountdownTimer } from "./CountdownTimer";
 import { CreditCard, Tag, AlertCircle, Sparkles } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export const Enrollment = () => {
+  const { ref, isVisible } = useScrollReveal();
   // Promotional deadline: December 15, 2025
   const promotionalDeadline = new Date("2025-12-15T23:59:59");
 
   return (
     <section id="enrollment" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <div 
+          ref={ref} 
+          className={`max-w-4xl mx-auto scroll-reveal ${isVisible ? 'visible' : ''}`}
+        >
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-gradient-accent" variant="secondary">
               <Sparkles className="w-4 h-4 mr-2" />
@@ -31,7 +36,7 @@ export const Enrollment = () => {
           </div>
 
           {/* Pricing Card */}
-          <Card className="p-8 shadow-large">
+          <Card className="p-8 shadow-large hover-lift hover-glow">
             <div className="text-center mb-8">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Tag className="w-8 h-8 text-accent" />
@@ -74,7 +79,7 @@ export const Enrollment = () => {
               <Button 
                 size="xl" 
                 variant="cta"
-                className="w-full md:w-auto"
+                className="w-full md:w-auto hover-lift hover-shine animate-pulse-glow"
               >
                 Garantir minha vaga agora
               </Button>

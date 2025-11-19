@@ -1,7 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Target, Microscope, Stethoscope, Award, Users, BookCheck } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export const Differentials = () => {
+  const { ref, isVisible } = useScrollReveal();
+  
   const differentials = [
     {
       icon: Target,
@@ -62,7 +65,10 @@ export const Differentials = () => {
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div 
+          ref={ref} 
+          className={`max-w-6xl mx-auto scroll-reveal ${isVisible ? 'visible' : ''}`}
+        >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Por que participar?
@@ -78,7 +84,7 @@ export const Differentials = () => {
               return (
                 <Card 
                   key={index}
-                  className="p-6 hover:shadow-large transition-all duration-300 hover:scale-105 group"
+                  className="p-6 hover:shadow-large transition-all duration-300 hover-lift hover-glow hover-shine group"
                 >
                   <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${getGradientClass(item.color)} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                     <Icon className={`w-8 h-8 ${getIconColor(item.color)}`} />

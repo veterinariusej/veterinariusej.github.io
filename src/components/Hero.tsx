@@ -4,40 +4,46 @@ import { Calendar, MapPin, Award, Users } from "lucide-react";
 import heroImage from "@/assets/hero-vet-surgery.jpg";
 import logoUFV from "@/assets/logo-ufv.png";
 import logoVeterinarius from "@/assets/logo-veterinarius.png";
+import { useParallax } from "@/hooks/use-parallax";
 
 export const Hero = () => {
+  const parallaxOffset = useParallax(0.5);
+  
   const scrollToEnroll = () => {
     document.getElementById("enrollment")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image with Overlay and Parallax */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{ transform: `translateY(${parallaxOffset}px)` }}
+      >
         <img 
           src={heroImage} 
           alt="Veterinary Surgery" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-gradient-hero animate-gradient" />
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Logos */}
-          <div className="flex justify-center items-center gap-6 md:gap-8 mb-6 animate-fade-in">
-            <img src={logoUFV} alt="UFV - Universidade Federal de Viçosa" className="h-10 md:h-12 object-contain drop-shadow-lg" />
-            <img src={logoVeterinarius} alt="Veterinarius - Empresa Júnior" className="h-14 md:h-18 object-contain drop-shadow-lg" />
+          <div className="flex justify-center items-center gap-6 md:gap-8 mb-6 animate-fade-in animate-float">
+            <img src={logoUFV} alt="UFV - Universidade Federal de Viçosa" className="h-10 md:h-12 object-contain drop-shadow-lg hover-scale" />
+            <img src={logoVeterinarius} alt="Veterinarius - Empresa Júnior" className="h-14 md:h-18 object-contain drop-shadow-lg hover-scale" />
           </div>
 
           {/* Badges */}
           <div className="flex flex-wrap justify-center gap-3 mb-6">
-            <Badge variant="secondary" className="px-4 py-2 text-sm bg-medical-secondary text-white hover:bg-white hover:text-medical-secondary transition-all duration-300 backdrop-blur-sm border-2 border-medical-secondary">
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-medical-secondary text-white hover:bg-white hover:text-medical-secondary transition-all duration-300 backdrop-blur-sm border-2 border-medical-secondary hover-lift hover-shine">
               <Award className="w-4 h-4 mr-2" />
               Certificado UFV (RAEX)
             </Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm bg-medical-secondary text-white hover:bg-white hover:text-medical-secondary transition-all duration-300 backdrop-blur-sm border-2 border-medical-secondary">
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-medical-secondary text-white hover:bg-white hover:text-medical-secondary transition-all duration-300 backdrop-blur-sm border-2 border-medical-secondary hover-lift hover-shine animate-pulse-glow">
               <Users className="w-4 h-4 mr-2" />
               Vagas Limitadas
             </Badge>
@@ -64,12 +70,12 @@ export const Hero = () => {
 
           {/* Course Info Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto mt-8">
-            <div className="bg-background/90 backdrop-blur-sm rounded-lg p-6 shadow-large">
+            <div className="bg-background/90 backdrop-blur-sm rounded-lg p-6 shadow-large hover-lift hover-glow hover-shine">
               <Calendar className="w-8 h-8 text-primary mx-auto mb-2" />
               <p className="font-semibold text-foreground">Quando</p>
               <p className="text-muted-foreground">28 e 29 de março de 2026</p>
             </div>
-            <div className="bg-background/90 backdrop-blur-sm rounded-lg p-6 shadow-large">
+            <div className="bg-background/90 backdrop-blur-sm rounded-lg p-6 shadow-large hover-lift hover-glow hover-shine">
               <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
               <p className="font-semibold text-foreground">Onde</p>
               <p className="text-muted-foreground">Universidade Federal de Viçosa</p>
@@ -82,7 +88,7 @@ export const Hero = () => {
               size="xl" 
               variant="cta"
               onClick={scrollToEnroll}
-              className="shadow-large"
+              className="shadow-large hover-lift hover-shine"
             >
               Quero me inscrever
             </Button>
@@ -90,6 +96,7 @@ export const Hero = () => {
               size="xl" 
               variant="hero"
               asChild
+              className="hover-lift"
             >
               <a href="https://wa.me/5531999999999" target="_blank" rel="noopener noreferrer">
                 Falar pelo WhatsApp
