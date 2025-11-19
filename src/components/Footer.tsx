@@ -1,10 +1,18 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import logoUFV from "@/assets/logo-ufv.png";
+import logoVeterinarius from "@/assets/logo-veterinarius.png";
 
 export const Footer = () => {
   return (
     <footer className="bg-foreground text-background py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
+          {/* Logos */}
+          <div className="flex justify-center items-center gap-8 mb-8 pb-8 border-b border-background/20">
+            <img src={logoUFV} alt="UFV - Universidade Federal de Viçosa" className="h-12 md:h-16 object-contain brightness-0 invert" />
+            <img src={logoVeterinarius} alt="Veterinarius - Empresa Júnior" className="h-10 md:h-12 object-contain brightness-0 invert" />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             {/* Course Info */}
             <div>
