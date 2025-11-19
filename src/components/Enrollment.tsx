@@ -39,8 +39,13 @@ export const Enrollment = () => {
               </div>
               
               <div className="bg-muted/50 rounded-lg p-6 inline-block mb-6">
-                <div className="text-5xl font-bold text-primary mb-2">
-                  R$ 1.000,00
+                <div className="flex items-center justify-center gap-4 mb-3">
+                  <span className="text-2xl md:text-3xl text-muted-foreground line-through">
+                    R$ 2.199,90
+                  </span>
+                </div>
+                <div className="text-5xl md:text-6xl font-bold text-primary mb-2">
+                  R$ 999,90
                 </div>
                 <div className="flex items-center justify-center gap-2 text-muted-foreground">
                   <CreditCard className="w-5 h-5" />

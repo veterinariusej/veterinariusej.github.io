@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Award, Users } from "lucide-react";
 import heroImage from "@/assets/hero-vet-surgery.jpg";
+import logoUFV from "@/assets/logo-ufv.png";
+import logoVeterinarius from "@/assets/logo-veterinarius.png";
 
 export const Hero = () => {
   const scrollToEnroll = () => {
@@ -23,6 +25,12 @@ export const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
+          {/* Logos */}
+          <div className="flex justify-center items-center gap-6 md:gap-8 mb-6 animate-fade-in">
+            <img src={logoUFV} alt="UFV - Universidade Federal de Viçosa" className="h-12 md:h-16 object-contain drop-shadow-lg" />
+            <img src={logoVeterinarius} alt="Veterinarius - Empresa Júnior" className="h-10 md:h-14 object-contain drop-shadow-lg" />
+          </div>
+
           {/* Badges */}
           <div className="flex flex-wrap justify-center gap-3 mb-6">
             <Badge variant="secondary" className="px-4 py-2 text-sm bg-background/90 backdrop-blur-sm">
