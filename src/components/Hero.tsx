@@ -27,8 +27,8 @@ export const Hero = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Logos */}
           <div className="flex justify-center items-center gap-6 md:gap-8 mb-6 animate-fade-in">
-            <img src={logoUFV} alt="UFV - Universidade Federal de Viçosa" className="h-12 md:h-16 object-contain drop-shadow-lg" />
-            <img src={logoVeterinarius} alt="Veterinarius - Empresa Júnior" className="h-10 md:h-14 object-contain drop-shadow-lg" />
+            <img src={logoUFV} alt="UFV - Universidade Federal de Viçosa" className="h-10 md:h-12 object-contain drop-shadow-lg" />
+            <img src={logoVeterinarius} alt="Veterinarius - Empresa Júnior" className="h-14 md:h-18 object-contain drop-shadow-lg" />
           </div>
 
           {/* Badges */}
