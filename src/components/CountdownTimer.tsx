@@ -34,8 +34,8 @@ export const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
   }, [targetDate]);
 
   return (
-    <div className="bg-gradient-accent rounded-xl p-6 shadow-large">
-      <div className="flex items-center justify-center gap-2 mb-4">
+    <div className="bg-gradient-accent rounded-xl p-6 shadow-large hover-lift hover-glow">
+      <div className="flex items-center justify-center gap-2 mb-4 animate-float">
         <Clock className="w-6 h-6 text-accent-foreground" />
         <h3 className="text-xl font-bold text-accent-foreground">
           Oferta promocional termina em:
@@ -48,7 +48,7 @@ export const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
           { label: "Min", value: timeLeft.minutes },
           { label: "Seg", value: timeLeft.seconds },
         ].map((item) => (
-          <div key={item.label} className="bg-background/10 backdrop-blur-sm rounded-lg p-4 text-center">
+          <div key={item.label} className="bg-background/10 backdrop-blur-sm rounded-lg p-4 text-center hover-lift hover-shine">
             <div className="text-3xl md:text-4xl font-bold text-accent-foreground">
               {String(item.value).padStart(2, "0")}
             </div>

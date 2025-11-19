@@ -1,7 +1,10 @@
 import { Check } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export const TargetAudience = () => {
+  const { ref, isVisible } = useScrollReveal();
+  
   const points = [
     "É médico-veterinário formado e deseja aprimorar ou atualizar seus conhecimentos em anestesia locorregional",
     "É acadêmico dos últimos períodos da graduação em Medicina Veterinária e quer se diferenciar já na saída da faculdade",
@@ -11,7 +14,10 @@ export const TargetAudience = () => {
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <div 
+          ref={ref} 
+          className={`max-w-4xl mx-auto scroll-reveal ${isVisible ? 'visible' : ''}`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
             Este curso é para você que...
           </h2>
@@ -19,11 +25,11 @@ export const TargetAudience = () => {
             Desenvolvido para veterinários que buscam excelência no cuidado anestésico
           </p>
 
-          <Card className="p-8 shadow-large">
+          <Card className="p-8 shadow-large hover-lift hover-glow">
             <div className="space-y-6">
               {points.map((point, index) => (
-                <div key={index} className="flex gap-4 items-start group hover:translate-x-2 transition-transform">
-                  <div className="bg-gradient-primary rounded-full p-2 shrink-0 shadow-medium">
+                <div key={index} className="flex gap-4 items-start group hover:translate-x-2 transition-all duration-300 hover-shine">
+                  <div className="bg-gradient-primary rounded-full p-2 shrink-0 shadow-medium group-hover:scale-110 transition-transform">
                     <Check className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <p className="text-lg text-foreground leading-relaxed pt-1">

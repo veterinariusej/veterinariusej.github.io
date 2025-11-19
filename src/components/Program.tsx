@@ -1,8 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, FlaskConical, Heart, Calendar } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export const Program = () => {
+  const { ref, isVisible } = useScrollReveal();
+  
   const schedule = [
     {
       day: "28/03/2026",
@@ -59,7 +62,10 @@ export const Program = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+        <div 
+          ref={ref} 
+          className={`max-w-5xl mx-auto scroll-reveal ${isVisible ? 'visible' : ''}`}
+        >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               O que você vai aprender
@@ -75,7 +81,7 @@ export const Program = () => {
               return (
                 <Card 
                   key={index} 
-                  className="p-6 md:p-8 hover:shadow-large transition-all duration-300 hover:scale-[1.02]"
+                  className="p-6 md:p-8 hover:shadow-large transition-all duration-300 hover-lift hover-glow hover-shine"
                 >
                   <div className="flex flex-col md:flex-row gap-6">
                     {/* Icon & Date */}
