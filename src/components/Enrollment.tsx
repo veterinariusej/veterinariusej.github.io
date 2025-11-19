@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { CountdownTimer } from "./CountdownTimer";
 import { CreditCard, Tag, AlertCircle, Sparkles } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { GlowCard } from "@/components/ui/glow-card";
 
 export const Enrollment = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -36,7 +37,7 @@ export const Enrollment = () => {
           </div>
 
           {/* Pricing Card */}
-          <Card className="p-8 shadow-large hover-lift hover-glow">
+          <GlowCard className="p-8 shadow-large bg-card rounded-lg border">
             <div className="text-center mb-8">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Tag className="w-8 h-8 text-accent" />
@@ -88,7 +89,7 @@ export const Enrollment = () => {
                 Consulte condições de parcelamento no ato da inscrição
               </p>
             </div>
-          </Card>
+          </GlowCard>
         </div>
       </div>
     </section>
