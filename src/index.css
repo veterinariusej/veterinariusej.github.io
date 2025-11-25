@@ -8,53 +8,53 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --background: 210 20% 97%; /* Cinza Claro #F4F6F8 */
+    --foreground: 216 9% 26%; /* Cinza Clínico #3A3F47 */
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 216 9% 26%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 216 9% 26%;
 
-    /* Medical blue - professional and trustworthy */
-    --primary: 221 83% 53%;
+    /* Azul Técnico - Precisão técnica e estabilidade #0A3D62 */
+    --primary: 203 81% 21%;
     --primary-foreground: 0 0% 100%;
-    --primary-dark: 221 83% 35%;
+    --primary-dark: 203 81% 15%;
 
-    /* Fresh green - health and life */
-    --secondary: 158 64% 52%;
+    /* Verde Cirúrgico - Ambiente clínico e segurança #0F8C7C */
+    --secondary: 172 81% 31%;
     --secondary-foreground: 0 0% 100%;
     
-    /* Vibrant orange - urgency and CTAs */
-    --accent: 20 91% 48%;
+    /* Accent (mantido para CTAs importantes) */
+    --accent: 172 81% 31%;
     --accent-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 20% 95%;
+    --muted-foreground: 216 9% 46%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221 83% 53%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 203 81% 21%;
 
     --radius: 0.75rem;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(221 83% 65%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(158 64% 52%) 0%, hsl(158 64% 64%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(20 91% 48%) 0%, hsl(20 91% 60%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(221 83% 53% / 0.95) 0%, hsl(221 83% 35% / 0.98) 100%);
+    /* Gradients - Based on Brand Guidelines colors */
+    --gradient-primary: linear-gradient(135deg, hsl(203 81% 21%) 0%, hsl(203 81% 30%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(172 81% 31%) 0%, hsl(172 81% 40%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(172 81% 31%) 0%, hsl(172 81% 40%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(203 81% 21% / 0.95) 0%, hsl(203 81% 15% / 0.98) 100%);
     
-    /* Shadows */
-    --shadow-soft: 0 2px 8px hsl(221 83% 53% / 0.08);
-    --shadow-medium: 0 4px 16px hsl(221 83% 53% / 0.12);
-    --shadow-large: 0 8px 32px hsl(221 83% 53% / 0.16);
+    /* Shadows - Using Azul Técnico */
+    --shadow-soft: 0 2px 8px hsl(203 81% 21% / 0.08);
+    --shadow-medium: 0 4px 16px hsl(203 81% 21% / 0.12);
+    --shadow-large: 0 8px 32px hsl(203 81% 21% / 0.16);
 
     /* Transitions */
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Animated Background */
@@ -130,7 +130,7 @@ All colors MUST be HSL.
   border-radius: 50%;
   opacity: 0;
   transition: opacity 0.3s ease;
-  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.4), rgba(37, 99, 235, 0.2) 40%, transparent 70%);
+  background: radial-gradient(circle at center, hsl(203 81% 21% / 0.4), hsl(203 81% 21% / 0.2) 40%, transparent 70%);
   filter: blur(30px);
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -183,10 +183,10 @@ All colors MUST be HSL.
 /* Pulse Glow */
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 20px hsl(203 81% 21% / 0.4);
   }
   50% {
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 40px hsl(203 81% 21% / 0.8);
   }
 }
 
@@ -200,39 +200,39 @@ All colors MUST be HSL.
 }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    --background: 216 9% 15%;
+    --foreground: 210 20% 97%;
 
-    --card: 222 47% 15%;
-    --card-foreground: 210 40% 98%;
+    --card: 216 9% 20%;
+    --card-foreground: 210 20% 97%;
 
-    --popover: 222 47% 15%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 216 9% 20%;
+    --popover-foreground: 210 20% 97%;
 
-    --primary: 221 83% 63%;
-    --primary-foreground: 222 47% 11%;
-    --primary-dark: 221 83% 45%;
+    --primary: 203 81% 35%;
+    --primary-foreground: 210 20% 97%;
+    --primary-dark: 203 81% 25%;
 
-    --secondary: 158 64% 62%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 172 81% 40%;
+    --secondary-foreground: 210 20% 97%;
     
-    --accent: 20 91% 58%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 172 81% 40%;
+    --accent-foreground: 210 20% 97%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 216 9% 25%;
+    --muted-foreground: 210 20% 65%;
 
     --destructive: 0 62.8% 50.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 210 20% 97%;
 
-    --border: 217.2 32.6% 20.5%;
-    --input: 217.2 32.6% 20.5%;
-    --ring: 221 83% 63%;
+    --border: 216 9% 30%;
+    --input: 216 9% 30%;
+    --ring: 203 81% 35%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(221 83% 63%) 0%, hsl(221 83% 75%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(158 64% 62%) 0%, hsl(158 64% 74%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(20 91% 58%) 0%, hsl(20 91% 70%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(221 83% 63% / 0.95) 0%, hsl(221 83% 45% / 0.98) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(203 81% 35%) 0%, hsl(203 81% 45%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(172 81% 40%) 0%, hsl(172 81% 50%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(172 81% 40%) 0%, hsl(172 81% 50%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(203 81% 35% / 0.95) 0%, hsl(203 81% 25% / 0.98) 100%);
   }
 }
 
@@ -242,6 +242,10 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat;
   }
 }
