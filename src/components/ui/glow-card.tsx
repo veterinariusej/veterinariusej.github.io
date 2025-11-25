@@ -28,7 +28,7 @@ export const GlowCard = ({ children, className }: GlowCardProps) => {
           left: `${position.x}%`,
           top: `${position.y}%`,
           transform: 'translate(-50%, -50%)',
-          background: 'radial-gradient(circle at center, rgba(59, 130, 246, 0.5), rgba(37, 99, 235, 0.3) 40%, transparent 70%)',
+          background: 'radial-gradient(circle at center, hsl(203 81% 21% / 0.5), hsl(203 81% 21% / 0.3) 40%, transparent 70%)',
           filter: 'blur(40px)',
           opacity: 0,
           transition: 'opacity 0.3s ease',
