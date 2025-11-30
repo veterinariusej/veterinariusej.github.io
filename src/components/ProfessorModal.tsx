@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Award, BookOpen, Briefcase, GraduationCap } from "lucide-react";
-import professorImage from "@/assets/professor-teaching.jpg";
+import professorImage from "@/assets/dr-paulo-klaumann.jpg";
 
 export const ProfessorModal = () => {
   return (
@@ -30,7 +30,7 @@ export const ProfessorModal = () => {
             <img 
               src={professorImage} 
               alt="Dr. Paulo Roberto Klaumann" 
-              className="w-32 h-32 rounded-lg object-cover shadow-medium"
+              className="w-32 h-32 rounded-lg object-cover object-top shadow-medium"
             />
             <div>
               <h3 className="text-lg font-semibold">Professor Convidado</h3>
