@@ -44,7 +44,12 @@ const formSchema = z.object({
   telefone: z.string()
     .min(14, "Telefone inválido")
     .max(15, "Telefone inválido"),
-  tipo: z.enum(["Estudante", "Profissional Formado"], {
+  tipo: z.enum([
+    "Estudante (Graduação em Medicina Veterinária)",
+    "Pós-graduação Lato Sensu (Residência / Aprimoramento / Especialização)",
+    "Pós-graduação Stricto Sensu (Mestrado / Doutorado)",
+    "Médico-veterinário anestesiologista"
+  ], {
     required_error: "Selecione uma opção",
   }),
   alunoUFV: z.enum(["Sim", "Não"], {
@@ -238,19 +243,31 @@ export const EnrollmentForm = () => {
                   Você é: <span className="text-destructive">*</span>
                 </Label>
                 <RadioGroup
-                  onValueChange={(value) => setValue("tipo", value as "Estudante" | "Profissional Formado")}
+                  onValueChange={(value) => setValue("tipo", value as FormData["tipo"])}
                   disabled={isSubmitting}
                 >
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="Estudante" id="estudante" />
+                    <RadioGroupItem value="Estudante (Graduação em Medicina Veterinária)" id="estudante" />
                     <Label htmlFor="estudante" className="font-normal cursor-pointer">
-                      Estudante
+                      Estudante (Graduação em Medicina Veterinária)
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="Profissional Formado" id="profissional" />
-                    <Label htmlFor="profissional" className="font-normal cursor-pointer">
-                      Profissional Formado
+                    <RadioGroupItem value="Pós-graduação Lato Sensu (Residência / Aprimoramento / Especialização)" id="lato-sensu" />
+                    <Label htmlFor="lato-sensu" className="font-normal cursor-pointer">
+                      Pós-graduação Lato Sensu (Residência / Aprimoramento / Especialização)
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="Pós-graduação Stricto Sensu (Mestrado / Doutorado)" id="stricto-sensu" />
+                    <Label htmlFor="stricto-sensu" className="font-normal cursor-pointer">
+                      Pós-graduação Stricto Sensu (Mestrado / Doutorado)
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="Médico-veterinário anestesiologista" id="anestesiologista" />
+                    <Label htmlFor="anestesiologista" className="font-normal cursor-pointer">
+                      Médico-veterinário anestesiologista
                     </Label>
                   </div>
                 </RadioGroup>
