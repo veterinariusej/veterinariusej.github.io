@@ -4,7 +4,7 @@ import { Program } from "@/components/Program";
 import { Differentials } from "@/components/Differentials";
 import { Professor } from "@/components/Professor";
 import { Certification } from "@/components/Certification";
-import { Enrollment } from "@/components/Enrollment";
+import { EnrollmentForm } from "@/components/EnrollmentForm";
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
@@ -19,7 +19,7 @@ const Index = () => {
       <Differentials />
       <Professor />
       <Certification />
-      <Enrollment />
+      <EnrollmentForm />
       <FAQ />
       <FinalCTA />
       <Footer />
