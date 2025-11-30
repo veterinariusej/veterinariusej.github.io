@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Award, BookOpen, Briefcase } from "lucide-react";
 import { ProfessorModal } from "./ProfessorModal";
-import professorImage from "@/assets/professor-teaching.jpg";
+import professorImage from "@/assets/dr-paulo-klaumann.jpg";
 
 export const Professor = () => {
   return (
@@ -26,7 +26,7 @@ export const Professor = () => {
                 <img 
                   src={professorImage} 
                   alt="Dr. Paulo Roberto Klaumann" 
-                  className="w-full h-80 object-cover rounded-lg shadow-medium"
+                  className="w-full h-80 object-cover object-top rounded-lg shadow-medium"
                 />
                 <div className="text-center">
                   <ProfessorModal />
