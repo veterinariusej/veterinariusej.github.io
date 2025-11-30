@@ -59,8 +59,8 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-// IMPORTANTE: Substitua pela URL do seu Google Apps Script
-const GOOGLE_APPS_SCRIPT_URL = "SUA_URL_DO_GOOGLE_APPS_SCRIPT_AQUI";
+// URL do Google Apps Script configurada
+const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzIigoVyCD8TaV6SGlAdfdtwCbmjbCqSerUNoL76QosKlZmSjrVj0tXffeR_-ZfZADEuA/exec";
 
 export const EnrollmentForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -96,15 +96,6 @@ export const EnrollmentForm = () => {
   };
 
   const onSubmit = async (data: FormData) => {
-    if (GOOGLE_APPS_SCRIPT_URL === "SUA_URL_DO_GOOGLE_APPS_SCRIPT_AQUI") {
-      toast({
-        title: "Configuração Pendente",
-        description: "Por favor, configure a URL do Google Apps Script no arquivo EnrollmentForm.tsx",
-        variant: "destructive",
-      });
-      return;
-    }
-
     setIsSubmitting(true);
     console.log("Enviando dados:", data);
 
