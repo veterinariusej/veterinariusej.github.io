@@ -8,12 +8,14 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const basename = import.meta.env.MODE === 'production' ? '/anestesia-vet-hands-on' : '';
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/anestesia-vet-hands-on">
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
