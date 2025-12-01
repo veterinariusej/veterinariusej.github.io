@@ -17,7 +17,10 @@ export const StickyMobileCTA = () => {
   }, []);
 
   const scrollToEnroll = () => {
-    document.getElementById("enrollment")?.scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById("inscricao");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   if (isDismissed || !isVisible) return null;

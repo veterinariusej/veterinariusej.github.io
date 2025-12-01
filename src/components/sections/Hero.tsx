@@ -6,13 +6,11 @@ import logoUFV from "@/assets/logo-ufv.png";
 import logoVeterinarius from "@/assets/logo-veterinarius.png";
 import { useParallax } from "@/hooks/use-parallax";
 import { GlowCard } from "@/components/ui/glow-card";
+import { courseConfig } from "@/config/course-data";
+import { scrollToEnroll, openWhatsApp } from "@/lib/navigation";
 
 export const Hero = () => {
   const parallaxOffset = useParallax(0.5);
-  
-  const scrollToEnroll = () => {
-    document.getElementById("enrollment")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
@@ -54,19 +52,19 @@ export const Hero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight">
             CURSO PRESENCIAL
             <br />
-            <span className="text-secondary">ANESTESIA LOCORREGIONAL</span>
+            <span className="text-secondary">{courseConfig.name.split(' ').slice(0, 2).join(' ').toUpperCase()}</span>
             <br />
-            EM CÃES E GATOS
+            {courseConfig.name.split(' ').slice(2).join(' ').toUpperCase()}
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-primary-foreground/90 font-medium">
-            Hands on: bloqueios fundamentais
+            {courseConfig.subtitle}
           </p>
 
           {/* Description */}
           <p className="text-lg text-primary-foreground/80 max-w-3xl mx-auto">
-            Domine, na prática, as principais técnicas de anestesia locorregional em pequenos animais com um dos maiores nomes da anestesiologia veterinária do país.
+            {courseConfig.description}
           </p>
 
           {/* Course Info Cards */}
@@ -74,12 +72,12 @@ export const Hero = () => {
             <GlowCard className="bg-background/90 backdrop-blur-sm rounded-lg p-6 shadow-large">
               <Calendar className="w-8 h-8 text-primary mx-auto mb-2" />
               <p className="font-semibold text-foreground">Quando</p>
-              <p className="text-muted-foreground">28 e 29 de março de 2026</p>
+              <p className="text-muted-foreground">{courseConfig.dates.start} e {courseConfig.dates.end.split('/')[0]} de março de 2026</p>
             </GlowCard>
             <GlowCard className="bg-background/90 backdrop-blur-sm rounded-lg p-6 shadow-large">
               <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
               <p className="font-semibold text-foreground">Onde</p>
-              <p className="text-muted-foreground">Universidade Federal de Viçosa</p>
+              <p className="text-muted-foreground">{courseConfig.location.name}</p>
             </GlowCard>
           </div>
 
@@ -96,12 +94,10 @@ export const Hero = () => {
             <Button 
               size="xl" 
               variant="hero"
-              asChild
+              onClick={() => openWhatsApp(courseConfig.contact.whatsapp)}
               className="hover-lift"
             >
-              <a href="https://wa.me/5531999999999" target="_blank" rel="noopener noreferrer">
-                Falar pelo WhatsApp
-              </a>
+              Falar pelo WhatsApp
             </Button>
           </div>
         </div>

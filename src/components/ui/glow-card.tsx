@@ -1,10 +1,15 @@
 import { useMouseGlow } from "@/hooks/use-mouse-glow";
-import { ReactNode } from "react";
+import { ReactNode, CSSProperties } from "react";
 import { cn } from "@/lib/utils";
 
 interface GlowCardProps {
   children: ReactNode;
   className?: string;
+}
+
+interface CustomCSSProperties extends CSSProperties {
+  '--glow-x'?: string;
+  '--glow-y'?: string;
 }
 
 export const GlowCard = ({ children, className }: GlowCardProps) => {
@@ -15,10 +20,9 @@ export const GlowCard = ({ children, className }: GlowCardProps) => {
       ref={ref}
       className={cn("relative hover-lift hover-shine", className)}
       style={{
-        // @ts-ignore
         '--glow-x': `${position.x}%`,
         '--glow-y': `${position.y}%`,
-      }}
+      } as CustomCSSProperties}
     >
       <div
         className="absolute pointer-events-none rounded-lg glow-effect"

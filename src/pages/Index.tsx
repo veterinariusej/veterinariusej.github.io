@@ -1,14 +1,15 @@
-import { Hero } from "@/components/Hero";
-import { TargetAudience } from "@/components/TargetAudience";
-import { Program } from "@/components/Program";
-import { Differentials } from "@/components/Differentials";
-import { Professor } from "@/components/Professor";
-import { Certification } from "@/components/Certification";
-import { EnrollmentForm } from "@/components/EnrollmentForm";
-import { FAQ } from "@/components/FAQ";
-import { FinalCTA } from "@/components/FinalCTA";
-import { Footer } from "@/components/Footer";
-import { StickyMobileCTA } from "@/components/StickyMobileCTA";
+import { 
+  Hero, 
+  TargetAudience, 
+  Program, 
+  Differentials, 
+  Professor, 
+  Certification, 
+  EnrollmentForm, 
+  FAQ, 
+  FinalCTA 
+} from "@/components/sections";
+import { Footer, StickyMobileCTA } from "@/components/layout";
 
 const Index = () => {
   return (

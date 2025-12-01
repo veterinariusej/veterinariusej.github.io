@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import logoUFV from "@/assets/logo-ufv.png";
 import logoVeterinarius from "@/assets/logo-veterinarius.png";
+import { courseConfig } from "@/config/course-data";
 
 export const Footer = () => {
   return (
@@ -17,12 +18,12 @@ export const Footer = () => {
             {/* Course Info */}
             <div>
               <h3 className="text-xl font-bold mb-4">
-                Curso de Anestesia Locorregional
+                {courseConfig.name}
               </h3>
               <p className="text-background/80 mb-4">
-                28 e 29 de março de 2026
+                {courseConfig.dates.start} e {courseConfig.dates.end.split('/')[0]} de março de 2026
                 <br />
-                Universidade Federal de Viçosa
+                {courseConfig.location.name}
               </p>
             </div>
 
@@ -32,19 +33,19 @@ export const Footer = () => {
               <div className="space-y-3 text-background/80">
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5" />
-                  <a href="https://wa.me/5531999999999" className="hover:text-background transition-colors">
-                    (31) 99999-9999
+                  <a href={`https://wa.me/${courseConfig.contact.whatsapp}`} className="hover:text-background transition-colors">
+                    {courseConfig.contact.phone}
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5" />
-                  <a href="mailto:contato@curso.ufv.br" className="hover:text-background transition-colors">
-                    contato@curso.ufv.br
+                  <a href={`mailto:${courseConfig.contact.email}`} className="hover:text-background transition-colors">
+                    {courseConfig.contact.email}
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5" />
-                  <span>Universidade Federal de Viçosa - MG</span>
+                  <span>{courseConfig.location.name} - {courseConfig.location.state}</span>
                 </div>
               </div>
             </div>

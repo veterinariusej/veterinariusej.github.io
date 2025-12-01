@@ -2,12 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
 import vetWithPets from "@/assets/vet-with-pets.jpg";
+import { scrollToEnroll, openWhatsApp } from "@/lib/navigation";
+import { courseConfig } from "@/config/course-data";
 
 export const FinalCTA = () => {
-  const scrollToEnroll = () => {
-    document.getElementById("enrollment")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -48,12 +46,10 @@ export const FinalCTA = () => {
                   <Button 
                     size="lg" 
                     variant="outline"
-                    asChild
+                    onClick={() => openWhatsApp(courseConfig.contact.whatsapp)}
                     className="w-full"
                   >
-                    <a href="https://wa.me/5531999999999" target="_blank" rel="noopener noreferrer">
-                      Tirar dúvidas pelo WhatsApp
-                    </a>
+                    Tirar dúvidas pelo WhatsApp
                   </Button>
                 </div>
 

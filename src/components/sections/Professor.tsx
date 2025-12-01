@@ -1,8 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Award, BookOpen, Briefcase } from "lucide-react";
-import { ProfessorModal } from "./ProfessorModal";
-import professorImage from "@/assets/dr-paulo-klaumann.jpg";
+import { ProfessorModal } from "@/components/shared/ProfessorModal";
+import { courseConfig } from "@/config/course-data";
 
 export const Professor = () => {
   return (
@@ -12,10 +12,10 @@ export const Professor = () => {
           <div className="text-center mb-12">
             <Badge className="mb-4" variant="secondary">Professor Convidado</Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Dr. Paulo Roberto Klaumann
+              {courseConfig.professor.name}
             </h2>
             <p className="text-muted-foreground text-lg">
-              Referência nacional em Anestesiologia Veterinária
+              {courseConfig.professor.title}
             </p>
           </div>
 
@@ -24,8 +24,8 @@ export const Professor = () => {
               {/* Image */}
               <div className="space-y-6">
                 <img 
-                  src={professorImage} 
-                  alt="Dr. Paulo Roberto Klaumann" 
+                  src={courseConfig.professor.image} 
+                  alt={courseConfig.professor.name}
                   className="w-full h-80 object-cover object-top rounded-lg shadow-medium"
                 />
                 <div className="text-center">
@@ -40,9 +40,9 @@ export const Professor = () => {
                   <div>
                     <h3 className="font-semibold mb-2">Formação</h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• Doutor em Ciências Veterinárias (UFPR)</li>
-                      <li>• Mestre em Ciências Veterinárias (UFPR)</li>
-                      <li>• Especialista em Anestesiologia Veterinária (PAV)</li>
+                      {courseConfig.professor.qualifications.education.map((item, idx) => (
+                        <li key={idx}>• {item}</li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -52,9 +52,9 @@ export const Professor = () => {
                   <div>
                     <h3 className="font-semibold mb-2">Experiência</h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• Sócio-proprietário da PRK Anestesiologia Veterinária</li>
-                      <li>• Responsável pelo Serviço de Anestesiologia do Hospital Veterinário Clinivet (Curitiba/PR) desde 1997</li>
-                      <li>• Mais de 25 anos de prática clínica</li>
+                      {courseConfig.professor.qualifications.experience.map((item, idx) => (
+                        <li key={idx}>• {item}</li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -64,15 +64,16 @@ export const Professor = () => {
                   <div>
                     <h3 className="font-semibold mb-2">Publicações</h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• Autor do livro "Anestesia Locorregional em Pequenos Animais"</li>
-                      <li>• Diversos capítulos em obras sobre anestesiologia veterinária</li>
+                      {courseConfig.professor.qualifications.publications.map((item, idx) => (
+                        <li key={idx}>• {item}</li>
+                      ))}
                     </ul>
                   </div>
                 </div>
 
                 <div className="bg-muted/50 rounded-lg p-4 mt-6">
                   <p className="text-sm italic text-muted-foreground">
-                    "Ter aula com o Dr. Paulo Klaumann é uma oportunidade de aprender diretamente com quem vive a prática da anestesia locorregional há décadas, aliando conhecimento científico sólido e experiência clínica."
+                    "{courseConfig.professor.quote}"
                   </p>
                 </div>
               </div>
