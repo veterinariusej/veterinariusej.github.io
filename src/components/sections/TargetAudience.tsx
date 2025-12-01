@@ -1,16 +1,10 @@
 import { Check } from "lucide-react";
-import { Card } from "@/components/ui/card";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { GlowCard } from "@/components/ui/glow-card";
+import { courseConfig } from "@/config/course-data";
 
 export const TargetAudience = () => {
   const { ref, isVisible } = useScrollReveal();
-  
-  const points = [
-    "É médico-veterinário formado e deseja aprimorar ou atualizar seus conhecimentos em anestesia locorregional",
-    "É acadêmico dos últimos períodos da graduação em Medicina Veterinária e quer se diferenciar já na saída da faculdade",
-    "Deseja aumentar a segurança anestésica, o controle da dor e a qualidade do atendimento a cães e gatos",
-  ];
 
   return (
     <section className="py-20 bg-muted/30">
@@ -28,7 +22,7 @@ export const TargetAudience = () => {
 
           <GlowCard className="p-8 shadow-large bg-card rounded-lg border">
             <div className="space-y-6">
-              {points.map((point, index) => (
+              {courseConfig.targetAudience.map((point, index) => (
                 <div key={index} className="flex gap-4 items-start group hover:translate-x-2 transition-all duration-300 hover-shine">
                   <div className="bg-gradient-primary rounded-full p-2 shrink-0 shadow-medium group-hover:scale-110 transition-transform">
                     <Check className="w-6 h-6 text-primary-foreground" />

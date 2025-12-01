@@ -1,55 +1,11 @@
-import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, FlaskConical, Heart, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { GlowCard } from "@/components/ui/glow-card";
+import { scheduleData } from "@/config/course-data";
 
 export const Program = () => {
   const { ref, isVisible } = useScrollReveal();
-  
-  const schedule = [
-    {
-      day: "28/03/2026",
-      period: "Manhã",
-      type: "Aula Teórica",
-      icon: BookOpen,
-      color: "primary",
-      title: "Fundamentos essenciais da anestesia regional",
-      topics: [
-        "Fundamentos da anestesia regional",
-        "Bloqueios do membro torácico",
-        "Bloqueios do membro pélvico",
-        "Bloqueios de tórax",
-        "Bloqueios de abdômen",
-      ],
-    },
-    {
-      day: "28/03/2026",
-      period: "Tarde",
-      type: "Aula Prática",
-      icon: FlaskConical,
-      color: "secondary",
-      title: "Transformando teoria em habilidade manual",
-      topics: [
-        "Fundamentos de ultrassonografia para o anestesista",
-        "Treinamento intensivo em modelos (cadáveres)",
-        "Prática segura e guiada de bloqueios",
-      ],
-    },
-    {
-      day: "29/03/2026",
-      period: "Manhã",
-      type: "Aula Prática em Animais Vivos",
-      icon: Heart,
-      color: "accent",
-      title: "Experiência real com acompanhamento próximo",
-      topics: [
-        "Prática de bloqueios em animais vivos durante procedimentos de castração",
-        "Acompanhamento próximo do professor em cada etapa",
-        "Segurança e aprendizado real garantidos",
-      ],
-    },
-  ];
 
   const getColorClass = (color: string) => {
     const colors = {
@@ -77,7 +33,7 @@ export const Program = () => {
           </div>
 
           <div className="space-y-6">
-            {schedule.map((item, index) => {
+            {scheduleData.map((item, index) => {
               const Icon = item.icon;
               return (
                 <GlowCard 

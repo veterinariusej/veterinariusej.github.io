@@ -1,15 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Award, CheckCircle2 } from "lucide-react";
+import { courseConfig } from "@/config/course-data";
 
 export const Certification = () => {
-  const benefits = [
-    "Ideal para compor currículo profissional",
-    "Comprova carga horária de atualização",
-    "Fortalece atuação em anestesiologia veterinária",
-    "Emitido por instituição de ensino reconhecida",
-  ];
-
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -42,7 +36,7 @@ export const Certification = () => {
                 </p>
                 
                 <div className="space-y-3 pt-4">
-                  {benefits.map((benefit, index) => (
+                  {courseConfig.certificationBenefits.map((benefit, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
                       <span className="text-foreground">{benefit}</span>

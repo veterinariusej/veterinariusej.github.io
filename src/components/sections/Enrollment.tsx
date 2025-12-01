@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CountdownTimer } from "./CountdownTimer";
+import { CountdownTimer } from "@/components/shared/CountdownTimer";
 import { CreditCard, Tag, AlertCircle, Sparkles } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { GlowCard } from "@/components/ui/glow-card";
