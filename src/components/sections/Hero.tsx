@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Award, Users } from "lucide-react";
 import heroImage from "@/assets/hero-vet-surgery.jpg";
 import logoUFV from "@/assets/logo-ufv.png";
-import logoVeterinarius from "@/assets/logo-veterinarius.png";
+import logoVeterinarius from "@/assets/logo-veterinarius-new.png";
 import { useParallax } from "@/hooks/use-parallax";
 import { GlowCard } from "@/components/ui/glow-card";
 import { courseConfig } from "@/config/course-data";
@@ -31,9 +31,9 @@ export const Hero = () => {
       <div className="container mx-auto px-4 relative z-10 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Logos */}
-          <div className="flex justify-center items-center gap-6 md:gap-8 mb-6 animate-fade-in animate-float">
+          <div className="flex flex-col justify-center items-center gap-4 md:gap-5 mb-6 animate-fade-in animate-float">
+            <img src={logoVeterinarius} alt="Veterinarius - Empresa Júnior" className="h-20 md:h-24 object-contain drop-shadow-lg hover-scale" />
             <img src={logoUFV} alt="UFV - Universidade Federal de Viçosa" className="h-10 md:h-12 object-contain drop-shadow-lg hover-scale" />
-            <img src={logoVeterinarius} alt="Veterinarius - Empresa Júnior" className="h-14 md:h-18 object-contain drop-shadow-lg hover-scale" />
           </div>
 
           {/* Badges */}

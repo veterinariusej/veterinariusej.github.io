@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import logoUFV from "@/assets/logo-ufv.png";
-import logoVeterinarius from "@/assets/logo-veterinarius.png";
+import logoVeterinarius from "@/assets/logo-veterinarius-new.png";
 import { courseConfig } from "@/config/course-data";
 
 export const Footer = () => {
@@ -33,14 +33,14 @@ export const Footer = () => {
               <div className="space-y-3 text-background/80">
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5" />
-                  <a href={`https://wa.me/${courseConfig.contact.whatsapp}`} className="hover:text-background transition-colors">
-                    {courseConfig.contact.phone}
+                  <a href="https://chat.whatsapp.com/LWxBdthhmvb9jkc4WnjoWM" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">
+                    Entrar na comunidade do WhatsApp
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5" />
-                  <a href={`mailto:${courseConfig.contact.email}`} className="hover:text-background transition-colors">
-                    {courseConfig.contact.email}
+                  <a href="mailto:veterinarius@ufv.br" className="hover:text-background transition-colors">
+                    veterinarius@ufv.br
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
