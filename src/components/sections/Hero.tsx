@@ -50,16 +50,16 @@ export const Hero = () => {
 
           {/* Main Title */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight">
-            CURSO PRESENCIAL
-            <br />
-            <span className="text-secondary">{courseConfig.name.split(' ').slice(0, 2).join(' ').toUpperCase()}</span>
-            <br />
-            {courseConfig.name.split(' ').slice(2).join(' ').toUpperCase()}
+            {courseConfig.subtitle.toUpperCase()}
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-primary-foreground/90 font-medium">
-            {courseConfig.subtitle}
+            CURSO PRESENCIAL
+            <br />
+            <span className="text-secondary">{courseConfig.name.split(' ').slice(0, 2).join(' ')}</span>
+            {' '}
+            {courseConfig.name.split(' ').slice(2).join(' ')}
           </p>
 
           {/* Description */}
@@ -94,10 +94,10 @@ export const Hero = () => {
             <Button 
               size="xl" 
               variant="hero"
-              onClick={() => openWhatsApp(courseConfig.contact.whatsapp)}
+              onClick={() => window.open("https://chat.whatsapp.com/LWxBdthhmvb9jkc4WnjoWM", "_blank", "noopener noreferrer")}
               className="hover-lift"
             >
-              Falar pelo WhatsApp
+              Entrar na comunidade do WhatsApp
             </Button>
           </div>
         </div>

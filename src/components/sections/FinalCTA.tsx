@@ -46,10 +46,10 @@ export const FinalCTA = () => {
                   <Button 
                     size="lg" 
                     variant="outline"
-                    onClick={() => openWhatsApp(courseConfig.contact.whatsapp)}
+                    onClick={() => window.open("https://chat.whatsapp.com/LWxBdthhmvb9jkc4WnjoWM", "_blank", "noopener noreferrer")}
                     className="w-full"
                   >
-                    Tirar dúvidas pelo WhatsApp
+                    Entrar na comunidade do WhatsApp
                   </Button>
                 </div>
 

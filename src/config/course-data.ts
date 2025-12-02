@@ -118,10 +118,6 @@ export const faqData = [
     answer: "O curso tem carga horária de 16 horas, distribuídas em dois dias completos (28 e 29 de março de 2026), incluindo aulas teóricas e práticas.",
   },
   {
-    question: "Preciso ter experiência prévia com anestesia locorregional?",
-    answer: "Não é necessário. O curso foi desenvolvido tanto para quem está começando quanto para quem deseja aprimorar suas técnicas. A programação contempla desde fundamentos até práticas avançadas.",
-  },
-  {
     question: "O curso é voltado apenas para veterinários formados?",
     answer: "Não. O curso é aberto também para acadêmicos dos últimos períodos da graduação em Medicina Veterinária, que desejam se diferenciar já na saída da faculdade.",
   },
@@ -132,10 +128,6 @@ export const faqData = [
   {
     question: "Como funciona o parcelamento?",
     answer: "Oferecemos possibilidades de parcelamento do valor do curso. As condições específicas e número de parcelas serão informadas durante o processo de inscrição.",
-  },
-  {
-    question: "Receberei material de apoio?",
-    answer: "Sim! Todos os participantes recebem material de apoio completo, incluindo apostilas com o conteúdo teórico e protocolos práticos para consulta futura.",
   },
   {
     question: "Preciso levar algum equipamento?",
