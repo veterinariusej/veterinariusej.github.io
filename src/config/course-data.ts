@@ -26,8 +26,8 @@ export const courseConfig: CourseConfig = {
   },
   
   pricing: {
-    original: 2199.90,
-    promotional: 999.90,
+    original: 1000.00,
+    promotional: 1000.00,
   },
   
   professor: {
@@ -114,8 +114,8 @@ export const scheduleData = [
 
 export const faqData = [
   {
-    question: "Qual é a carga horária total do curso?",
-    answer: "O curso tem carga horária de 16 horas, distribuídas em dois dias completos (28 e 29 de março de 2026), incluindo aulas teóricas e práticas.",
+    question: "Como são distribuídas as atividades do curso?",
+    answer: "As atividades serão distribuídas em dois dias.",
   },
   {
     question: "O curso é voltado apenas para veterinários formados?",

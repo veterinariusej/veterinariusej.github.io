@@ -32,7 +32,7 @@ export const Hero = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Logos */}
           <div className="flex flex-col justify-center items-center gap-4 md:gap-5 mb-6 animate-fade-in animate-float">
-            <img src={logoVeterinarius} alt="Veterinarius - Empresa Júnior" className="h-20 md:h-24 object-contain drop-shadow-lg hover-scale" />
+            <img src={logoVeterinarius} alt="Veterinarius - Empresa Júnior" className="h-28 md:h-36 object-contain drop-shadow-lg hover-scale" />
             <img src={logoUFV} alt="UFV - Universidade Federal de Viçosa" className="h-10 md:h-12 object-contain drop-shadow-lg hover-scale" />
           </div>
 
