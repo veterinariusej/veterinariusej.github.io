@@ -7,8 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Card } from "@/components/ui/card";
-import { Loader2, CheckCircle2 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Loader2, CheckCircle2, CreditCard, Tag, Sparkles } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { GlowCard } from "@/components/ui/glow-card";
 
 // Validação de CPF
 const validarCPF = (cpf: string): boolean => {
@@ -133,7 +135,11 @@ export const EnrollmentForm = () => {
   return (
     <section id="inscricao" className="py-20 px-4 bg-muted/30">
       <div className="container max-w-2xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
+          <Badge className="mb-4 bg-gradient-accent" variant="secondary">
+            <Sparkles className="w-4 h-4 mr-2" />
+            Primeiro Lote
+          </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-heading">
             Inscreva-se Agora
           </h2>
@@ -141,6 +147,33 @@ export const EnrollmentForm = () => {
             Preencha o formulário abaixo para garantir sua vaga
           </p>
         </div>
+
+        {/* Pricing Card */}
+        <GlowCard className="p-6 mb-8 shadow-large bg-card rounded-lg border">
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Tag className="w-6 h-6 text-accent" />
+              <h3 className="text-xl font-bold">Valor do Investimento</h3>
+            </div>
+            
+            <div className="bg-muted/50 rounded-lg p-4 inline-block mb-4">
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                R$ 1.000,00
+              </div>
+              <div className="text-lg font-medium text-accent mb-2">
+                Primeiro Lote
+              </div>
+              <div className="flex items-center justify-center gap-2 text-muted-foreground text-sm">
+                <CreditCard className="w-4 h-4" />
+                <span>Possibilidade de parcelamento</span>
+              </div>
+            </div>
+
+            <p className="text-sm text-muted-foreground">
+              <span className="font-semibold text-foreground">Vagas limitadas</span> para manter a qualidade do treinamento prático.
+            </p>
+          </div>
+        </GlowCard>
 
         <Card className="p-8 shadow-lg">
           {isSuccess ? (
